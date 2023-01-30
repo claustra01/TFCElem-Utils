@@ -36,11 +36,11 @@ grades = [
 
 metals = [
     # name, enableTool, enablePart, enableArmor, enableUtility, [textureType(iron/silver/steel), h, s, v]
-    ["lead", False, True, False, False, ["iron", -123, 25, -28]],
-    ["platinum", False, True, False, False, ["silver", -148, 46, 0]],
-    ["electrum", False, True, False, False, ["silver", -148, 18, 0]],
-    ["invar", False, True, False, False, ["iron", -148, 18, 0]],
-    ["constantan", False, True, False, False, ["iron", -148, 18, 0]],
+    ["lead", False, True, False, False, ["iron", 119, 25, -28]],
+    ["platinum", False, True, False, False, ["silver", 106, 46, 0]],
+    ["electrum", False, True, False, False, ["silver", 22, 163, 0]],
+    ["invar", False, True, False, False, ["iron", 30, 18, 0]],
+    ["constantan", False, True, False, False, ["iron", 6, 114, 0]],
     ["signalum", False, True, False, False, ["steel", -148, 18, 0]],
     ["lumium", False, True, False, False, ["steel", -148, 18, 0]],
     ["enderium", False, True, False, False, ["steel", -148, 18, 0]],
