@@ -41,12 +41,12 @@ metals = [
     ["electrum", False, True, False, False, ["silver", 22, 163, 0]],
     ["invar", False, True, False, False, ["iron", 30, 18, 0]],
     ["constantan", False, True, False, False, ["iron", 6, 114, 0]],
-    ["signalum", False, True, False, False, ["steel", -148, 18, 0]],
-    ["lumium", False, True, False, False, ["steel", -148, 18, 0]],
-    ["enderium", False, True, False, False, ["steel", -148, 18, 0]],
-    ["aluminum", False, True, False, False, ["iron", -148, 18, 0]],
-    ["uranium", False, True, False, False, ["iron", -148, 18, 0]],
-    ["osmium", False, True, False, False, ["iron", -148, 18, 0]],
+    ["signalum", False, True, False, False, ["steel", 10, 255, -18]],
+    ["lumium", False, True, False, False, ["steel", 25, 149, 3]],
+    ["enderium", False, True, False, False, ["steel", 94, 255, -28]],
+    ["aluminum", False, True, False, False, ["iron", 91, 35, 0]],
+    ["uranium", False, True, False, False, ["iron", 50, 165, -28]],
+    ["osmium", False, True, False, False, ["iron", 95, 43, 0]],
     ["refined_obsidian", False, True, False, False, ["steel", -148, 18, 0]],
     ["refined_glowstone", False, True, False, False, ["steel", -148, 18, 0]]
 ]
