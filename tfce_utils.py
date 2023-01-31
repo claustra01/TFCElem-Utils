@@ -88,3 +88,15 @@ def heat_registerer(dir_path, file_path, values, metal, cons):
     dict["welding_temperature"] = round(metal[6][1] * 0.8)
     create_dir(dir_path)
     write_json(dict, file_path)
+
+
+# anvil recipe
+def create_anvil_recipe(file_path, input, output, count, tier, rules):
+    dict = {}
+    dict["type"] = "tfc:anvil"
+    dict["input"] = {"tag":input}
+    dict["result"] = {"item":output, "count":count}
+    dict["tier"] = tier
+    dict["rules"] = rules
+    create_dir("../src/main/resources/data/tfc/recipes/anvil")
+    write_json(dict, file_path)

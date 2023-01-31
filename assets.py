@@ -4,6 +4,7 @@ import ore_all
 import metal_item
 import metal_block
 import metal_all
+import recipe
 
 # init lang file
 dict = {}
@@ -41,3 +42,6 @@ metal_block.gen_texture()
 # all metals
 metal_all.register_tag()
 metal_all.register_metal()
+
+# recipes
+recipe.anvil_recipe()
