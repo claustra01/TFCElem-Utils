@@ -125,3 +125,13 @@ def create_welding_recipe(file_path, input1, input2, output, tier):
     create_dir("../src/main/resources/data/tfc/recipes/welding")
     write_json(dict, file_path)
 
+
+# heating recipe
+def create_heating_recipe(file_path, input, output, metal, cons):
+    dict = {}
+    dict["type"] = "tfc/heating"
+    dict["ingredient"] = {"item":input}
+    dict["result_fluid"] = {"fluid":output, "amount":100*cons}
+    dict["temperature"] = metal[6][1]
+    create_dir("../src/main/resources/data/tfc/recipes/heating")
+    write_json(dict, file_path)

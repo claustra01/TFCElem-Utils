@@ -39,3 +39,13 @@ def metal_recipe():
             input = "forge:ingots/" + metal[0]
             output = "tfc:metal/rod/" + metal[0]
             tfce_utils.create_anvil_recipe(file_path, input, output, 2, metal[6][0], ["bend_last", "draw_second_last", "draw_third_last"])
+
+
+def heating_metals():
+    
+    for metal in tfce_types.metals:
+        
+        file_path = "../src/main/resources/data/tfc/recipes/heating/" + metal[0] + "_ingot.json"
+        input = "tfc:metal/ingot/" + metal[0]
+        output = "tfc:metal/" + metal[0]
+        tfce_utils.create_heating_recipe(file_path, input, output, metal, 1)
