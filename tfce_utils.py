@@ -129,7 +129,7 @@ def create_welding_recipe(file_path, input1, input2, output, tier):
 # heating recipe
 def create_heating_recipe(file_path, input, output, metal, cons):
     dict = {}
-    dict["type"] = "tfc/heating"
+    dict["type"] = "tfc:heating"
     dict["ingredient"] = {"item":input}
     dict["result_fluid"] = {"fluid":output, "amount":100*cons}
     dict["temperature"] = metal[6][1]
