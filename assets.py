@@ -44,4 +44,4 @@ metal_all.register_tag()
 metal_all.register_metal()
 
 # recipes
-recipe.anvil_recipe()
+recipe.metal_recipe()

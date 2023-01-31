@@ -1,7 +1,7 @@
 import tfce_types
 import tfce_utils
 
-def anvil_recipe():
+def metal_recipe():
     
     for metal in tfce_types.metals:
         
