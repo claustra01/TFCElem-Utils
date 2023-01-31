@@ -1,5 +1,6 @@
 import json
 import os
+import tfce_types
 
 # read json
 def read_json (file_path) -> dict:
@@ -28,6 +29,14 @@ def create_nested_dict(list, val, dict, n=0):
         create_nested_dict(list, val, dict[list[n]], n + 1)
     else:
         dict[list[n]] = val
+        
+
+# ore to metal
+def ore_to_metal(ore):
+    for metal in tfce_types.metals:
+        if ore[2] == metal[0]:
+            return metal
+    return None
   
       
 # create simple state
@@ -69,3 +78,13 @@ def create_simple_tag(dir_path, file_path, values):
     create_dir(dir_path)
     write_json(dict, file_path) 
 
+
+# heat registerer
+def heat_registerer(dir_path, file_path, values, metal, cons):
+    dict = {}
+    dict["ingredient"] = values
+    dict["heat_capacity"] = round(metal[6][3] * cons, 3)
+    dict["forging_temperature"] = round(metal[6][1] * 0.6)
+    dict["welding_temperature"] = round(metal[6][1] * 0.8)
+    create_dir(dir_path)
+    write_json(dict, file_path)

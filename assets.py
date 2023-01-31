@@ -23,6 +23,7 @@ ore_graded.gen_state()
 ore_graded.gen_model()
 ore_graded.gen_lang()
 ore_graded.register_tag()
+ore_graded.register_heat()
 
 # all ores
 ore_all.register_tag()

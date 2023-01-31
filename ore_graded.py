@@ -110,3 +110,21 @@ def register_tag():
             for grade in tfce_types.grades:
                 values.append("#tfc:ores/" + ore[2] + "/" + grade)
             tfce_utils.create_simple_tag(dir_path, file_path, values)
+
+
+def register_heat():
+    
+    for ore in tfce_types.ores:
+        if ore[1]:
+            
+            values = []
+            dir_path = "../src/main/resources/data/tfc/tfc/item_heats/ore"
+            file_path = dir_path + "/" + ore[2] + ".json"
+            for grade in tfce_types.grades:
+                dict = {}
+                dict["item"] = "tfc:ore/" + grade + "_" + ore[0]
+                values.append(dict)
+            dict = {}
+            dict["item"] = "tfc:ore/small_" + ore[0]
+            values.append(dict)
+            tfce_utils.heat_registerer(dir_path, file_path, values, tfce_utils.ore_to_metal(ore), 0.4)
