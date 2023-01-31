@@ -100,3 +100,28 @@ def create_anvil_recipe(file_path, input, output, count, tier, rules):
     dict["rules"] = rules
     create_dir("../src/main/resources/data/tfc/recipes/anvil")
     write_json(dict, file_path)
+
+
+# casting recipe
+def create_casting_recipe(file_path, mold, fluid, amount, output, break_chance):
+    dict = {}
+    dict["type"] = "tfc:casting"
+    dict["mold"] = {"item":mold}
+    dict["fluid"] = {"ingredient":fluid, "amount":amount}
+    dict["result"] = {"item":output}
+    dict["break_chance"] = break_chance
+    create_dir("../src/main/resources/data/tfc/recipes/casting")
+    write_json(dict, file_path)
+
+    
+# welding recipe
+def create_welding_recipe(file_path, input1, input2, output, tier):
+    dict = {}
+    dict["type"] = "tfc:welding"
+    dict["first_input"] = {"tag":input1}
+    dict["second_input"] = {"tag":input2}
+    dict["tier"] = tier
+    dict["result"] = {"item":output}
+    create_dir("../src/main/resources/data/tfc/recipes/welding")
+    write_json(dict, file_path)
+
