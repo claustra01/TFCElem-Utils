@@ -4,21 +4,21 @@ import tfce_images
 
 def create_metal_item_model(metal, types):
     for type in types:
-        dir_path = "../src/main/resources/assets/tfc/models/item/metal/" + type
+        dir_path = "../src/main/resources/assets/tfc/models/item/metal/" + type[0]
         file_path = dir_path + "/" + metal[0] + ".json"
-        texture_path = "tfc:item/metal/" + type + "/" + metal[0]
+        texture_path = "tfc:item/metal/" + type[0] + "/" + metal[0]
         tfce_utils.create_simple_item_model(dir_path, file_path, texture_path)
         
 
 def trans_metal_item(metal, types, dict) -> dict:
     for type in types:
-        trans_key = "item.tfc.metal." + type + "." + metal[0]
+        trans_key = "item.tfc.metal." + type[0] + "." + metal[0]
         if type == "propick":
             display_name = metal[0].replace("_", " ").title() + " " + "Prospector's Pick"
         elif type == "propick_head":
             display_name = metal[0].replace("_", " ").title() + " " + "Prospector's Pick Head"
         else:
-            display_name = metal[0].replace("_", " ").title() + " " + type.replace("_", " ").title()
+            display_name = metal[0].replace("_", " ").title() + " " + type[0].replace("_", " ").title()
         dict[trans_key] = display_name
     return dict
 
@@ -38,8 +38,8 @@ def gen_model():
                 dict = {}
                 dir_path = "../src/main/resources/assets/tfc/models/item/metal/" + type
                 file_path = dir_path + "/" + metal[0] + ".json"
-                colored_path = "tfc:item/metal/" + type + "/" + metal[0]
-                handle_path = "tfc:item/metal/" + type + "/handle"
+                colored_path = "tfc:item/metal/" + type[0] + "/" + metal[0]
+                handle_path = "tfc:item/metal/" + type[0] + "/handle"
                 tfce_utils.create_simple_item_model(dir_path, file_path, texture_path)
                 dict["parent"] = "item/generated"
                 tfce_utils.create_nested_dict(["textures", "layer0"], colored_path, dict)
@@ -97,16 +97,16 @@ def gen_texture():
         # tool
         if metal[1]:
             for type in tfce_types.types_tools:
-                if not type == "shield":
-                    temp_path = "../src/main/resources/assets/tfc/textures/item/metal/" + type + "/base.png"
-                    file_path = "../src/main/resources/assets/tfc/textures/item/metal/" + type + "/" + metal[0] + ".png"
+                if not type[0] == "shield":
+                    temp_path = "../src/main/resources/assets/tfc/textures/item/metal/" + type[0] + "/base.png"
+                    file_path = "../src/main/resources/assets/tfc/textures/item/metal/" + type[0] + "/" + metal[0] + ".png"
                     tfce_images.change_hsv(temp_path, file_path, metal[5][1], metal[5][2], metal[5][3])
 
         # part
         if metal[2]:
             for type in tfce_types.types_parts:
-                temp_path = "../src/main/resources/assets/tfc/textures/item/metal/" + type + "/" + metal[5][0] + "_base.png"
-                file_path = "../src/main/resources/assets/tfc/textures/item/metal/" + type + "/" + metal[0] + ".png"
+                temp_path = "../src/main/resources/assets/tfc/textures/item/metal/" + type[0] + "/" + metal[5][0] + "_base.png"
+                file_path = "../src/main/resources/assets/tfc/textures/item/metal/" + type[0] + "/" + metal[0] + ".png"
                 tfce_images.change_hsv(temp_path, file_path, metal[5][1], metal[5][2], metal[5][3])
 
 
@@ -125,8 +125,8 @@ def register_tag():
         if metal[2]:
             for type in tfce_types.types_parts:
                 values = []
-                values.append("tfc:metal/" + type + "/" + metal[0])
-                dir_path = "../src/main/resources/data/forge/tags/items/" + type + "s"
+                values.append("tfc:metal/" + type[0] + "/" + metal[0])
+                dir_path = "../src/main/resources/data/forge/tags/items/" + type[0] + "s"
                 file_path = dir_path + "/" + metal[0] + ".json"
                 tfce_utils.create_simple_tag(dir_path, file_path, values)
         
@@ -137,12 +137,12 @@ def register_tag():
         file_path = dir_path + "/" + metal[0] + ".json"
         if metal[1]:
             for type in tfce_types.types_tools:
-                values.append("tfc:metal/" + type + "/" + metal[0])
+                values.append("tfc:metal/" + type[0] + "/" + metal[0])
         if metal[2]:
             for type in tfce_types.types_parts:
-                values.append("tfc:metal/" + type + "/" + metal[0])
+                values.append("tfc:metal/" + type[0] + "/" + metal[0])
         if metal[3]:
             for type in tfce_types.types_armors:
-                values.append("tfc:metal/" + type + "/" + metal[0])
+                values.append("tfc:metal/" + type[0] + "/" + metal[0])
         tfce_utils.create_simple_tag(dir_path, file_path, values)
         

@@ -17,9 +17,9 @@ def register_tag():
         for type in tfce_types.types_parts:
             values = []
             for metal in tfce_types.metals:
-                values.append("tfc:metal/" + type + "/" + metal[0])
+                values.append("tfc:metal/" + type[0] + "/" + metal[0])
             dir_path = "../src/main/resources/data/forge/tags/items"
-            tfce_utils.create_simple_tag(dir_path, dir_path + "/" + type + "s.json", values)
+            tfce_utils.create_simple_tag(dir_path, dir_path + "/" + type[0] + "s.json", values)
             if type == "sheet":
                 dir_path = "../src/main/resources/data/tfc/tags/items"
                 tfce_utils.create_simple_tag(dir_path, dir_path + "/pileable_sheets.json", values)
