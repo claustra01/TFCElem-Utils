@@ -23,6 +23,9 @@ def change_hsv(temp_path, file_path, h, s, v):
     temp_img = cv2.imread(temp_path)
     hsv_img = cv2.cvtColor(temp_img, cv2.COLOR_BGR2HSV)
     
+    if "full" in temp_path:
+        v *= 3
+    
     hsv_img[:,:,(0)] = hsv_img[:,:,(0)] + h
     hsv_img[:,:,(1)] = calc(hsv_img[:,:,(1)], s)
     hsv_img[:,:,(2)] = calc(hsv_img[:,:,(2)], v)
