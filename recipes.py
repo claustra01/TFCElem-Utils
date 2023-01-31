@@ -1,6 +1,14 @@
 import tfce_types
 import tfce_utils
 
+def create_metal_item_heating_recipe(metal, types):
+    for type in types:
+        file_path = "../src/main/resources/data/tfc/recipes/heating/" + metal[0] + "_" + type[0] + ".json"
+        input = "tfc:metal/" + type[0] + "/" + metal[0]
+        output = "tfc:metal/" + metal[0]
+        tfce_utils.create_heating_recipe(file_path, input, output, metal, type[1])
+
+
 def metal_recipe():
     
     for metal in tfce_types.metals:
@@ -49,3 +57,6 @@ def heating_metals():
         input = "tfc:metal/ingot/" + metal[0]
         output = "tfc:metal/" + metal[0]
         tfce_utils.create_heating_recipe(file_path, input, output, metal, 1)
+        
+        if metal[2]:
+            create_metal_item_heating_recipe(metal, tfce_types.types_parts)
