@@ -146,3 +146,14 @@ def register_tag():
                 values.append("tfc:metal/" + type[0] + "/" + metal[0])
         tfce_utils.create_simple_tag(dir_path, file_path, values)
         
+
+def register_heat():
+    
+    for metal in tfce_types.metals:
+        
+        # ingots
+        values = [{}]
+        dir_path = "../src/main/resources/data/tfc/tfc/item_heats/metal"
+        file_path = dir_path + "/" + metal[0] + "_ingot.json"
+        values[0]["item"] = "tfc:metal/ingot/" + metal[0]
+        tfce_utils.heat_registerer(dir_path, file_path, values, metal, 1)

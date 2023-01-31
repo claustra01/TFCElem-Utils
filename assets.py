@@ -33,6 +33,7 @@ metal_item.gen_model()
 metal_item.gen_texture()
 metal_item.gen_lang()
 metal_item.register_tag()
+metal_item.register_heat()
 
 # metal blocks
 metal_block.gen_texture()
