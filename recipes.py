@@ -47,6 +47,35 @@ def metal_recipe():
             input = "forge:ingots/" + metal[0]
             output = "tfc:metal/rod/" + metal[0]
             tfce_utils.create_anvil_recipe(file_path, input, output, 2, metal[6][0], ["bend_last", "draw_second_last", "draw_third_last"])
+            
+
+def heating_ores():
+    
+    for ore in tfce_types.ores:
+        
+        file_path = "../src/main/resources/data/tfc/recipes/heating/normal_" + ore[0] + ".json"
+        metal = tfce_utils.ore_to_metal(ore)
+        input = "tfc:ore/normal_" + ore[0]
+        output = "tfc:metal/" + metal[0]
+        tfce_utils.create_heating_recipe(file_path, input, output, metal, 0.25)
+
+        file_path = "../src/main/resources/data/tfc/recipes/heating/poor_" + ore[0] + ".json"
+        metal = tfce_utils.ore_to_metal(ore)
+        input = "tfc:ore/poor_" + ore[0]
+        output = "tfc:metal/" + metal[0]
+        tfce_utils.create_heating_recipe(file_path, input, output, metal, 0.15)
+
+        file_path = "../src/main/resources/data/tfc/recipes/heating/rich_" + ore[0] + ".json"
+        metal = tfce_utils.ore_to_metal(ore)
+        input = "tfc:ore/rich_" + ore[0]
+        output = "tfc:metal/" + metal[0]
+        tfce_utils.create_heating_recipe(file_path, input, output, metal, 0.35)
+
+        file_path = "../src/main/resources/data/tfc/recipes/heating/small_" + ore[0] + ".json"
+        metal = tfce_utils.ore_to_metal(ore)
+        input = "tfc:ore/small_" + ore[0]
+        output = "tfc:metal/" + metal[0]
+        tfce_utils.create_heating_recipe(file_path, input, output, metal, 0.1)
 
 
 def heating_metals():

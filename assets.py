@@ -45,4 +45,5 @@ metal_all.register_metal()
 
 # recipes
 recipes.metal_recipe()
+recipes.heating_ores()
 recipes.heating_metals()
