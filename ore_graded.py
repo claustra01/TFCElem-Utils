@@ -89,7 +89,7 @@ def gen_lang():
     tfce_utils.write_json(dict, file_path)
 
 
-def register_tags():
+def register_tag():
     
     for ore in tfce_types.ores:
         if ore[1]:

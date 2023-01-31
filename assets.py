@@ -22,19 +22,19 @@ tfce_utils.create_simple_tag(dir_path, dir_path + "/needs_netherite_tool.json", 
 ore_graded.gen_state()
 ore_graded.gen_model()
 ore_graded.gen_lang()
-ore_graded.register_tags()
+ore_graded.register_tag()
 
 # all ores
-ore_all.register_tags()
+ore_all.register_tag()
 
 # metal items
 metal_item.gen_model()
 metal_item.gen_texture()
 metal_item.gen_lang()
-metal_item.register_tags()
+metal_item.register_tag()
 
 # metal blocks
 metal_block.gen_texture()
 
 # all metals
-metal_all.register_tags()
+metal_all.register_tag()

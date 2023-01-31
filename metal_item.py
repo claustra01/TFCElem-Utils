@@ -110,7 +110,7 @@ def gen_texture():
                 tfce_images.change_hsv(temp_path, file_path, metal[5][1], metal[5][2], metal[5][3])
 
 
-def register_tags():
+def register_tag():
     
     for metal in tfce_types.metals:
         

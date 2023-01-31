@@ -1,7 +1,7 @@
 import tfce_types
 import tfce_utils
 
-def register_tags():
+def register_tag():
     
     # ore blocks
     values = []
