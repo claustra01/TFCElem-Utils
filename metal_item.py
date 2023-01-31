@@ -157,3 +157,12 @@ def register_heat():
         file_path = dir_path + "/" + metal[0] + "_ingot.json"
         values[0]["item"] = "tfc:metal/ingot/" + metal[0]
         tfce_utils.heat_registerer(dir_path, file_path, values, metal, 1)
+        
+        # types
+        if metal[2]:
+            for type in tfce_types.types_parts:
+                values = [{}]
+                dir_path = "../src/main/resources/data/tfc/tfc/item_heats/metal"
+                file_path = dir_path + "/" + metal[0] + "_" + type[0] + ".json"
+                values[0]["item"] = "tfc:metal/" + type[0] + "/" + metal[0]
+                tfce_utils.heat_registerer(dir_path, file_path, values, metal, 1)
