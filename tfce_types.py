@@ -23,8 +23,10 @@ rocks = [
 
 ores = [
     # name, isGraded, metalName, hardness(wood/stone/iron/diamond/netherite)
+    ["galena", True, "lead", "stone"],
     ["native_platinum", True, "platinum", "diamond"],
     ["bauxite", True, "aluminum", "iron"],
+    ["pitchblende", True, "uranium", "iron"],
     ["native_osmium", True, "osmium", "diamond"]
 ]
 
